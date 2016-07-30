@@ -1,0 +1,12 @@
+{
+   Something_wrong_in_cppunit
+   Memcheck:Leak
+   fun:malloc
+   fun:__cxa_get_globals
+   fun:_ZSt18uncaught_exceptionv
+   fun:_ZNSo6sentryD2Ev
+   fun:_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l
+   fun:_ZN7CppUnit17CompilerOutputter12printSuccessEv
+   fun:main
+}
+

@@ -1,0 +1,23 @@
+SCryptominisat By Amit Metodi
+-----------------------------
+Usage:
+------
+Please visit: http://amit.metodi.me/research/scrypto
+
+
+Visual Cpp compilation:
+-----------------------
+The compilation instruction should be:
+
+cl /favor:INTEL64 /O2 /FeSCryptoMinisat.exe /F2097152 /TP /EHsc -I..\cryptominisat-2.5.1\solver -I..\cryptominisat-2.5.1\mtl -I..\cryptominisat-2.5.1\MTRand Main.C ..\cryptominisat-2.5.1\solver\*.cpp
+
+executed from the 'SCryptoMinisat' directory
+
+(or can simply execute compileWin.cmd)
+
+
+Linux / MinGW32 compilation:
+----------------------------
+Use the makefile
+or
+Replace the file "cryptominisat-2.5.1/solver/Main.C" with "SCryptoMinisat/Main.C" and compile Cryptominisat as described in its documentation. 
