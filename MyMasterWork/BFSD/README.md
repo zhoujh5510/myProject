@@ -3,7 +3,3 @@
 3.可以调用的API可以在'picosat.h'文件中查看.
 4.编译的步骤是先执行./configure 和 make.  然后执行g++ -c BFSD.cpp picosat.c 最后执行g++ -o picosat.o BFSD.o -o BFSD
 5.执行./BFSD "文件名" "极小诊断长度".
-		  
-
-
-
