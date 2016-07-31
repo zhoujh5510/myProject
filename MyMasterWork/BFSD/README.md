@@ -1,5 +1,5 @@
-1.BFSD.cpp文件是自己实现的算法,在该算法中会用到picosat solver.该算法利用枚举树按层次遍历优先的策略求解基于模型的诊断问题.
-2.文件夹内包含了PicoSAT solver相关的文件.
-3.可以调用的API可以在'picosat.h'文件中查看.
-4.编译的步骤是先执行./configure 和 make.  然后执行g++ -c BFSD.cpp picosat.c 最后执行g++ -o picosat.o BFSD.o -o BFSD
-5.执行./BFSD "文件名" "极小诊断长度".
+1.BFSD.cpp�ļ����Լ�ʵ�ֵ��㷨,�ڸ��㷨�л��õ�picosat solver.���㷨����ö��������α������ȵĲ���������ģ�͵��������.
+2.�ļ����ڰ�����PicoSAT solver��ص��ļ�.
+3.���Ե��õ�API������'picosat.h'�ļ��в鿴.
+4.����Ĳ�������ִ��./configure �� make.  Ȼ��ִ��g++ -c BFSD.cpp picosat.c ���ִ��g++ -o picosat.o BFSD.o -o BFSD
+5.ִ��./BFSD "�ļ���" "��С��ϳ���".
