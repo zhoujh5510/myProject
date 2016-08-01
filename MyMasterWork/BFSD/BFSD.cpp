@@ -1,4 +1,4 @@
-/*
+﻿/*
 **@author:周建华
 **function:基于枚举树的层次遍历实现模型诊断算法
 **date:2015-8-26
@@ -56,7 +56,7 @@ set<int> tempset;                     //use it to store temple set
 
 void readfile(char *filename)
 {
-	assert(filename != NULL);
+    assert(filename != NULL);
     FILE   *fp;
     char   *tempstr;
     char   tempstr1[10];
@@ -71,8 +71,8 @@ void readfile(char *filename)
     fp = fopen(filename, "r");
     if(fp==NULL) 
     {
-		printf("Cannot find the input file. Make sure the filename is correct.\n");
-		exit(0);
+	printf("Cannot find the input file. Make sure the filename is correct.\n");
+	exit(0);
     }
 	
     tempstr=fgets(line, 100, fp);
@@ -93,13 +93,13 @@ void readfile(char *filename)
     //add cluases into Picosat
     for (i = 0; i < num_clauses; i++) 
     {
+	temp = fscanf(fp, "%d", &lit);
+	//printf("%d\n",lit);
+	picosat_add(picosat,lit);
+	while (lit != 0) {
 		temp = fscanf(fp, "%d", &lit);
 		//printf("%d\n",lit);
-		picosat_add(picosat,lit);
-		while (lit != 0) {
-		temp = fscanf(fp, "%d", &lit);
-		//printf("%d\n",lit);
-        picosat_add(picosat,lit);
+        	picosat_add(picosat,lit);
       }
     }
     
@@ -117,44 +117,44 @@ void readfile(char *filename)
 */
 int usePicosat(int ps[]){                  
 	int i;
-    int j;
+	int j;
 	int *pm;
 	pm=&ps[0];
-    MAX++;
-    /*
+	MAX++;
+	/*
 	for(i = 0 ; i <= lastIndex; i++){
-     if(ps[i])
+             if(ps[i])
 		printf("%d   ",ps[i]);
-    }
-    printf("\n");
-    */
-    //printf("start\n");
+	}
+    		printf("\n");
+	*/
+	//printf("start\n");
 	//printf("%d\n",Mcard);
-        for(i = 0 ; i <= lastIndex; i++) 
-         {
-              if((ps[i] == 0))
-                {
-                     break;
-                }
-              else if(ps[i] != 0)
-                {
-					//printf("---%d---\n",ps[i]);
-                    //printf("done!\n");
-                    picosat_assume(picosat,ps[i]);
-                }
-         }
-         //printf("end\n");
+	for(i = 0 ; i <= lastIndex; i++) 
+	{
+		if((ps[i] == 0))
+		{
+			break;
+         	}
+         	else if(ps[i] != 0)
+         	{	
+            		//printf("---%d---\n",ps[i]);
+            		//printf("done!\n");
+            		picosat_assume(picosat,ps[i]);
+         	}
+	}
+	//printf("end\n");
          for(j = 1 ; j <= com ; j++)
          {
               if( j == *pm)
-				{
-					pm++;
-				}
-				else
-				{
-					//printf("do!\n");
-					picosat_assume(picosat,j*-1);
-				}
+		{
+			pm++;
+		}
+		else
+		{
+			//printf("do!\n");
+			picosat_assume(picosat,j*-1);
+		}
          } 
 	
 
@@ -180,12 +180,12 @@ int usePicosat(int ps[]){
 //inital unitMax lastIndex seq[]
 void initial(int unitMax1)
 {
-		unitMax = unitMax1;
-		lastIndex = -1;
-                int i;
-		for (i = 0; i<100; i++) 
+	unitMax = unitMax1;
+	lastIndex = -1;
+	int i;
+	for (i = 0; i<100; i++) 
         {
-            seq[i] = 0;
+            	seq[i] = 0;
         }
 }
 
@@ -202,7 +202,7 @@ void print()
 		//if seq is only 0, then do nothing
 		if (lastIndex<0){
 			//cout << "0 " << endl;
-            printf("\n");
+            		printf("\n");
 			return;
 		}
 		
